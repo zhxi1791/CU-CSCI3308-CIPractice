@@ -1,5 +1,5 @@
 language: c
 os: trusty
 sudo: required
-install: make deps
+install: make dep
 script: make test
