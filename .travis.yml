@@ -1,6 +1,5 @@
 language: c
 os: trusty
-
-install:
-  - make deps
-  - make test
+sudo: required
+install: make deps
+script: make test
