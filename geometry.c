@@ -14,10 +14,44 @@
 #include <errno.h>
 
 #include "geometry.h"
-
 #define FUZZY_EQ 0.01
 
 #define DEBUG(file, line, func, msg) fprintf(stderr, "DEBUG - %s_%d_%s: %s", file, line, func, msg);
+
+double coord_2d_area_triangle(const coord_2d_t* a, const coord_2d_t* b, const coord_2d_t* c) {
+  /* double temp, maxh, minh, maxl, minl; */
+
+  /* maxh = a->x; */
+  /* minh = a->x; */
+  /* maxl = a->y; */
+  /* minl = a->y; */
+
+  /* temp = b->x; */
+  /* if(temp > maxh) */
+  /*   maxh = temp; */
+  /* if(temp < minh) */
+  /*   minh = temp; */
+  /* temp = b->y; */
+  /* if(temp > maxl) */
+  /*   maxl = temp; */
+  /* if(temp < minl) */
+  /*   minl = temp; */
+
+  /* temp = c->x; */
+  /* if(temp > maxh) */
+  /*   maxh = temp; */
+  /* if(temp < minh) */
+  /*   minh = temp; */
+  /* temp = c->y; */
+  /* if(temp > maxl) */
+  /*   maxl = temp; */
+  /* if(temp < minl) */
+  /*   minl = temp; */
+
+  // double area = (maxh - minh) * (maxl - minl);
+
+  return fabs((a->x * (b->y - c->y)+b->x * (c->y - a->y)+c->x * (a->y - b->y))/(2));
+}
 
 double coord_2d_dist(const coord_2d_t* a, const coord_2d_t* b){
 
